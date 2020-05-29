@@ -9,7 +9,7 @@ function Ouverture() {
     const initForm1 = {
       date_creation: "21/07/2014",
       departement: "Ouest",
-      bureau: "Delams",
+      bureau: "Delmas",
       zone: "001",
     };
 

@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
   const { date_creation, departement, bureau, zone } = form_data1;
@@ -67,7 +67,7 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
               />
             </div>
 
-            <div class="form-group col-md-6">
+            <div className="form-group col-md-6">
               <label>Zone scolaire (BIZ)</label>
               <input
                 type="text"
