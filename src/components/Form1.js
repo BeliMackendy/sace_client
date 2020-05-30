@@ -1,16 +1,12 @@
 import React, { Fragment, useState } from "react";
-import axios from "axios";
+
 
 const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
-  const { dde, bds, biz, date_demande } = form_data1;
-
+  
   const [date_creation, setDate_creation] = useState();
   const [departement, setDepartement] = useState();
   const [bureau, setBureau] = useState();
-  const [zone, setZone] = useState();
-  const [ouverture, setOuverture] = useState();
-
-  let url_ouverture = "http://localhost:3001/app/sace/ouverture";
+  const [zone, setZone] = useState();  
 
   const submitForm = () => {
     setFormdata1({
@@ -19,14 +15,7 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
       dde: departement,
       bds: bureau,
       biz: zone,
-    });
-
-    // const setformdata = {
-    //   dde: departement,
-    //   bds: bureau,
-    //   biz: zone,
-    //   date_demande: date_creation,
-    // };
+    });    
     setCurrentform(currentform + 1);
   };
   //

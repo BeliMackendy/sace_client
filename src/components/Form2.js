@@ -31,7 +31,7 @@ const Form2 = ({
   const [postEmail, setPostEmail] = useState();
 
 
-  const [ouverture, setOuverture] = useState();
+  // const [ouverture, setOuverture] = useState();
 
   const selectsouscategorie_handler = (e) => {
     setPostIdCategorie(e.target.value);
@@ -97,7 +97,7 @@ const Form2 = ({
       .post(url_ouverture, setformdata)
       .then((res) => {
         console.log(res.data);
-        setOuverture(res.data);
+        // setOuverture(res.data);
       })
       .catch((err) => {
         console.log(err);
