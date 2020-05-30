@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const allcategorie = async () => {
-  await axios
-    .get("http://localhost:3001/app/sace/categorie")
-    .then((response) => {
-      //   console.log(response.data);
-      // this.setState({ Etablissements: response.data });
-      return response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+function Categorie(props) {
+  const [postcategorie, setPostcategorie] = useState([]);
 
-function categorie() {
-  const all_categorie = allcategorie();  
-  return <div all_categorie={all_categorie}></div>;
+  let url_categorie = "http://localhost:3001/app/sace/categorie";
+
+  useEffect(() => {
+    axios
+      .get(url_categorie)
+      .then((res) => {
+        // console.log(res.data);
+        setPostcategorie(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      }, []);
+  });  
+
+  return (
+    <>
+      <div className="form-group">
+        <label>Catégorie</label>
+        <select
+          className="form-control"
+          onChange={(e)=>props.selectoption_handler(e,postcategorie)}
+        >
+          <option value="0">Selection Catégorie</option>
+          {postcategorie.map((post, index) => (
+            <option key={index} value={post.Idcategorie}>
+              {post.Libelle_Categorie}
+            </option>
+          ))}
+        </select>
+      </div>
+    </>
+  );
 }
 
-export default categorie;
+export default Categorie;

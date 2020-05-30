@@ -35,7 +35,7 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
               marginRight: "10px",
             }}
           >
-            Etape 1: Informations générales
+            Informations générales
           </div>
 
           <div className="form-group">
