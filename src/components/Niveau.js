@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 
-function Niveau() {
+function Niveau(props) {
     const [postniveau, setPostniveau] = useState([]);
     let url_niveau = "http://localhost:3001/app/sace/niveau";
 
@@ -14,21 +14,23 @@ function Niveau() {
         })
         .catch((err) => {
           console.log(err);
-        }, []);
+        }
+        , []);
+        return () => {};
+        
     });
 
     return (
       <>
         <div className="form-group">
           <label>Niveau d’enseignement </label>
-          <select className="form-control">
+          <select
+            className="form-control"
+            onChange={(e) => props.select_niveau_handler(e)}
+          >
             <option value="0">Selection Niveau</option>
             {postniveau.map((post, index) => (
-              <option
-                key={index}
-                value={post.Id_niveau}
-                // onChange={select_niveau_handler()}
-              >
+              <option key={index} value={post.Id_niveau}>
                 {post.libelle_niveau}
               </option>
             ))}

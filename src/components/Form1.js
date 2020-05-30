@@ -1,24 +1,35 @@
 import React, { Fragment, useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
-  const { date_creation, departement, bureau, zone } = form_data1;
+  const { dde, bds, biz, date_demande } = form_data1;
 
-  const [date_creation_, setDate_creation_] = useState(date_creation);
-  const [departement_, setDepartement_] = useState(departement);
-  const [bureau_, setBureau_] = useState(bureau);
-  const [zone_, setZone_] = useState(zone);
+  const [date_creation, setDate_creation] = useState();
+  const [departement, setDepartement] = useState();
+  const [bureau, setBureau] = useState();
+  const [zone, setZone] = useState();
+  const [ouverture, setOuverture] = useState();
+
+  let url_ouverture = "http://localhost:3001/app/sace/ouverture";
 
   const submitForm = () => {
     setFormdata1({
       ...form_data1,
-      date_creation: date_creation_,
-      departement: departement_,
-      bureau: bureau_,
-      zone: zone_,
+      date_demande: date_creation,
+      dde: departement,
+      bds: bureau,
+      biz: zone,
     });
+
+    // const setformdata = {
+    //   dde: departement,
+    //   bds: bureau,
+    //   biz: zone,
+    //   date_demande: date_creation,
+    // };
     setCurrentform(currentform + 1);
   };
+  //
 
   return (
     <Fragment>
@@ -41,9 +52,9 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
           <div className="form-group">
             <label>Date de la demande</label>
             <input
-              type="text"
-              value={date_creation_}
-              onChange={(e) => setDate_creation_(e.target.value)}
+              type="date"
+              value={date_creation}
+              onChange={(e) => setDate_creation(e.target.value)}
               className="form-control"
             />
           </div>
@@ -51,8 +62,8 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
             <label>Direction départementale d’éducation (DDE)</label>
             <input
               type="text"
-              value={departement_}
-              onChange={(e) => setDepartement_(e.target.value)}
+              value={departement}
+              onChange={(e) => setDepartement(e.target.value)}
               className="form-control"
             />
           </div>
@@ -61,8 +72,8 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
               <label>Bureau District Scolaire (BDS)</label>
               <input
                 type="text"
-                value={bureau_}
-                onChange={(e) => setBureau_(e.target.value)}
+                value={bureau}
+                onChange={(e) => setBureau(e.target.value)}
                 className="form-control"
               />
             </div>
@@ -71,8 +82,8 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
               <label>Zone scolaire (BIZ)</label>
               <input
                 type="text"
-                value={zone_}
-                onChange={(e) => setZone_(e.target.value)}
+                value={zone}
+                onChange={(e) => setZone(e.target.value)}
                 className="form-control"
               />
             </div>

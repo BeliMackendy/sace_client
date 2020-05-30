@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 
-function Vacation() {
+function Vacation(props) {
     const [postvacation, setPostvacation] = useState([]);
     let url_vacation = "http://localhost:3001/app/sace/vacation";
 
@@ -21,14 +21,13 @@ function Vacation() {
       <>
         <div className="form-group">
           <label>Vacation </label>
-          <select className="form-control">
+          <select
+            className="form-control"
+            onChange={(e) => props.select_vacation_handler(e)}
+          >
             <option value="0">Selection Vacation</option>
             {postvacation.map((post, index) => (
-              <option
-                key={index}
-                value={post.Id_vacation}
-                // onChange={select_niveau_handler()}
-              >
+              <option key={index} value={post.Id_vacation}>
                 {post.libelle_vacation}
               </option>
             ))}
