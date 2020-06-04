@@ -10,7 +10,7 @@ function Personne_morale(props) {
     "Autre",
   ];
 
-  const [postInputform, setPostInputform] = useState({    
+  const [postInputform, setPostInputform] = useState({
     denomination: "",
     nature: "",
     reconnaissance: "",

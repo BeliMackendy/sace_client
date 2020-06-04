@@ -5,8 +5,8 @@ import Personnemorale from "./Personne_morale";
 
 import axios from "axios";
 
-const Form3 = ({ setCurrentform, currentform }, form_data2) => {
-  console.log(form_data2);
+const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
+  // console.log(form_data2);
   const fondateur = [
     "Entreprise individuelle",
     "Entreprise en noms collectifs",
@@ -48,7 +48,7 @@ const Form3 = ({ setCurrentform, currentform }, form_data2) => {
   };
 
   const sendData = (url, data) => {
-    console.log(data);
+    // console.log(data);
     axios
       .post(url, data, { header: { "Content-Type": "multipart/form-data" } })
       .then((res) => {
@@ -70,7 +70,7 @@ const Form3 = ({ setCurrentform, currentform }, form_data2) => {
       "http://localhost:3001/app/sace/personne_morale";
     const formData = new FormData();
     if (postfondateur === "Entreprise individuelle") {
-      formData.append("id", 1);
+      formData.append("id", form_data2.Id_institution);
       formData.append("nom", postformfondateur.nom);
       formData.append("prenom", postformfondateur.prenom);
       formData.append("nif", postformfondateur.nif);
@@ -89,21 +89,22 @@ const Form3 = ({ setCurrentform, currentform }, form_data2) => {
       sendData(url_ent_individuelle, formData);
     }
     if (postfondateur === "Entreprise en noms collectifs") {
-      formData.append("id", 1);
+      formData.append("id", form_data2.Id_institution);
       formData.append("denomination", postformfondateur.denomination);
       formData.append("nature", postformfondateur.nature);
       formData.append("acte_constitutif", postformfondateur.acte_constitutif);
-      formData.append("reconnaissance", postformfondateur.reconnaissane);
+      formData.append("reconnaissance", postformfondateur.reconnaissance);
       formData.append("copie_p_identite", postformfondateur.copie_p_identite);
       sendData(url_ent_nomscollectif, formData);
     }
     if (postfondateur === "Personne morale") {
-      formData.append("id", 1);
+      formData.append("id", form_data2.Id_institution);
       formData.append("denomination", postformfondateur.denomination);
       formData.append("nature", postformfondateur.nature);
-      formData.append("reconnaissance", postformfondateur.reconnaissane);
+      formData.append("reconnaissance", postformfondateur.reconnaissance);
       formData.append("quitus_patente", postformfondateur.quitus_patente);
-      sendData(url_personne_morale, formData);
+      sendData(url_personne_morale, formData);      
+      
     }
   };
 

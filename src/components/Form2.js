@@ -95,7 +95,7 @@ const Form2 = ({
     axios
       .post(url_ouverture, setformdata)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setFormdata2(res.data);
         // setOuverture(res.data);
       })
