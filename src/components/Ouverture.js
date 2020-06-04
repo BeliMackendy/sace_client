@@ -36,6 +36,7 @@ function Ouverture() {
 
   // console.log(form1_data);
   // console.log(form2_data);
+  
   return (
     <>
       <h3 className="text-center font-weight-bold">Ouverture de Dossier</h3>

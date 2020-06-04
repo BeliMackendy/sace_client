@@ -89,7 +89,9 @@ const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
       sendData(url_ent_individuelle, formData);
     }
     if (postfondateur === "Entreprise en noms collectifs") {
+      
       formData.append("id", form_data2.Id_institution);
+      // formData.append("id", '1');
       formData.append("denomination", postformfondateur.denomination);
       formData.append("nature", postformfondateur.nature);
       formData.append("acte_constitutif", postformfondateur.acte_constitutif);
