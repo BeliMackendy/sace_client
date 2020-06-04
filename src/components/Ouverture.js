@@ -13,6 +13,7 @@ function Ouverture() {
     biz: "",
   };
   const initForm2 = {
+    id:"",
     denomination: "",
     adresse: "",
     tel: "",
@@ -26,6 +27,8 @@ function Ouverture() {
     programme: "",
     cible: "",
   };
+  
+  
 
   const [currentform, setCurrentform] = useState(1);
   const [form1_data, setForm1data] = useState(initForm1);
@@ -58,7 +61,12 @@ function Ouverture() {
         </>
       ) : currentform === 3 ? (
         <>
-          <Form3 setCurrentform={setCurrentform} currentform={currentform} />
+          <Form3
+            setCurrentform={setCurrentform}
+            currentform={currentform}            
+            form_data2={form2_data}
+            // setFormdata2={setForm2data}
+          />
         </>
       ) : (
         <>

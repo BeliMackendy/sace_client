@@ -12,3 +12,16 @@
   margin-right: 10px;
 }
 
+.m-formulaire{
+  margin-top: 2px;
+}
+.m-formulaire ul>li:hover{
+  color:white;
+  background-color: lightblue;
+}
+
+.mainformaulaire
+{
+  width: 98%;
+}
+

@@ -6,18 +6,20 @@ import Ouverture from "./Ouverture";
 
 function Formulaire() {  
   return (
-    <BrowserRouter>
-      <div className="row">
-        <div className="col-sm-12 col-md-3">
-          <MenuFormulaire />
-        </div>
-        <div className="col-sm-12 col-md-9">
-          <div className="route_main2">
-            <Route exact path="/Ouverture" component={Ouverture} />           
+    <div className="mainformaulaire">
+      <BrowserRouter>
+        <div className="row">
+          <div className="col-sm-6 col-md-3">
+            <MenuFormulaire />
+          </div>
+          <div className="col-sm-6 col-md-9">
+            <div className="route_main2">
+              <Route exact path="/Ouverture" component={Ouverture} />
+            </div>
           </div>
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 
