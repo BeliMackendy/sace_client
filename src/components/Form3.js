@@ -52,8 +52,9 @@ const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
     axios
       .post(url, data, { header: { "Content-Type": "multipart/form-data" } })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         // setOuverture(res.data);
+        setCurrentform(currentform + 1);
       })
       .catch((err) => {
         console.log(err);
@@ -61,7 +62,7 @@ const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
   };
 
   const submitForm = () => {
-    console.log(postformfondateur);
+    // console.log(postformfondateur);
     const url_ent_individuelle =
       "http://localhost:3001/app/sace/entreprise_individuelle";
     const url_ent_nomscollectif =
@@ -98,6 +99,7 @@ const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
       formData.append("reconnaissance", postformfondateur.reconnaissance);
       formData.append("copie_p_identite", postformfondateur.copie_p_identite);
       sendData(url_ent_nomscollectif, formData);
+
     }
     if (postfondateur === "Personne morale") {
       formData.append("id", form_data2.Id_institution);

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 function E_individuelle(props) {
-  const [postfile, setPostfile] = useState();
-  const [postfilename, setPostfilename] = useState();
+  // const [postfile, setPostfile] = useState();
+  // const [postfilename, setPostfilename] = useState();
 
   const [postInputform, setPostInputform] = useState({
     nom: "",
