@@ -1,12 +1,12 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import Disctrict from "./Disctrict";
 
 
 const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
-  
   const [date_creation, setDate_creation] = useState();
   const [departement, setDepartement] = useState();
   const [bureau, setBureau] = useState();
-  const [zone, setZone] = useState();  
+  const [zone, setZone] = useState();
 
   const submitForm = () => {
     setFormdata1({
@@ -15,10 +15,15 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
       dde: departement,
       bds: bureau,
       biz: zone,
-    });    
+    });
     setCurrentform(currentform + 1);
+  }; //
+
+  useEffect(() => {});
+
+  const initDerpartement = (dep) => {
+    setDepartement(dep);
   };
-  //
 
   return (
     <Fragment>
@@ -47,7 +52,8 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
               className="form-control"
             />
           </div>
-          <div className="form-group">
+          {/* <Departement initDerpartement={initDerpartement} /> */}
+          {/* <div className="form-group">
             <label>Direction départementale d’éducation (DDE)</label>
             <input
               type="text"
@@ -55,16 +61,18 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
               onChange={(e) => setDepartement(e.target.value)}
               className="form-control"
             />
-          </div>
+          </div> */}
+          <Disctrict/>
           <div className="form-row">
             <div className="form-group col-md-6">
               <label>Bureau District Scolaire (BDS)</label>
-              <input
+              {/* <Disctrict departement={departement}/> */}
+              {/* <input
                 type="text"
                 value={bureau}
                 onChange={(e) => setBureau(e.target.value)}
                 className="form-control"
-              />
+              /> */}
             </div>
 
             <div className="form-group col-md-6">

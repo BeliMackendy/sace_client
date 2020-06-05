@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Categorie from "./categorie";
+import Categorie from "./Categorie";
 
 function Souscategorie(props) {
   const [postsouscategorie, setPostsouscategorie] = useState([]);

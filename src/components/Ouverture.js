@@ -12,6 +12,7 @@ function Ouverture() {
     bds: "",
     biz: "",
   };
+  
   const initForm2 = {
     id:"",
     denomination: "",
