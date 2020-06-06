@@ -24,6 +24,13 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
   const initDerpartement = (dep) => {
     setDepartement(dep);
   };
+  const initBureau = (bureau) => {
+    setBureau(bureau);
+  };
+  const initZone = (zon) => {
+    setZone(zon);
+  };
+  
 
   return (
     <Fragment>
@@ -52,43 +59,15 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
               className="form-control"
             />
           </div>
-          {/* <Departement initDerpartement={initDerpartement} /> */}
-          {/* <div className="form-group">
-            <label>Direction départementale d’éducation (DDE)</label>
-            <input
-              type="text"
-              value={departement}
-              onChange={(e) => setDepartement(e.target.value)}
-              className="form-control"
-            />
-          </div> */}
-          <Disctrict/>
-          <div className="form-row">
-            <div className="form-group col-md-6">
-              <label>Bureau District Scolaire (BDS)</label>
-              {/* <Disctrict departement={departement}/> */}
-              {/* <input
-                type="text"
-                value={bureau}
-                onChange={(e) => setBureau(e.target.value)}
-                className="form-control"
-              /> */}
-            </div>
-
-            <div className="form-group col-md-6">
-              <label>Zone scolaire (BIZ)</label>
-              <input
-                type="text"
-                value={zone}
-                onChange={(e) => setZone(e.target.value)}
-                className="form-control"
-              />
-            </div>
-          </div>
-          <button variant="info" className="btn btn-info" onClick={submitForm}>
-            Suivant
-          </button>
+          <Disctrict
+            initDerpartement={initDerpartement}
+            initBureau={initBureau}
+            initZone={initZone}
+          />
         </form>
+        <button variant="info" className="btn btn-info" onClick={submitForm}>
+          Suivant
+        </button>
       </div>
     </Fragment>
   );

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import Disctrict from "./Disctrict";
 
 const Departement = (props) => {
   const [postDepartement, setPostDepartement] = useState([]);
@@ -18,15 +17,6 @@ const Departement = (props) => {
         console.log(err);
       }, []);
   });
-
-  // const selectoption_handler = (e) => {
-  //   // console.log(e.target.value);
-  //   const dep = postDepartement.filter(function (o) {
-  //     return o.Code_direction === e.target.value;
-  //   });
-  //   props.initDerpartement(dep);
-  //   // console.log(dep);
-  // };
 
   return (
     <>

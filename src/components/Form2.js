@@ -14,7 +14,7 @@ const Form2 = ({
   form_data2,
   setFormdata2,
 }) => {
-  // console.log(form_data1);
+  console.log(form_data1);
   const { dde, bds, biz, date_demande } = form_data1;
 
   const [postIdCategorie, setPostIdCategorie] = useState();
@@ -30,7 +30,6 @@ const Form2 = ({
   const [postTel, setPostTel] = useState();
   const [postEmail, setPostEmail] = useState();
 
-  // const [ouverture, setOuverture] = useState();
 
   const selectsouscategorie_handler = (e) => {
     setPostIdCategorie(e.target.value);
@@ -49,10 +48,7 @@ const Form2 = ({
   const select_public_cible_handler = (e) => {
     setPostIdPublicCible(e.target.value);
   };
-
-  // console.log(
-  //   `Categorie: ${postIdCategorie},Niveau: ${postIdNiveau},Vacation: ${postIdVacation},Programme: ${postIdProgramme}, Public_cible: ${postIdPublicCible}`
-  // );
+  
   let url_ouverture = "http://localhost:3001/app/sace/ouverture";
 
   const submitForm = () => {
