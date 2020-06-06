@@ -58,7 +58,7 @@ function Ouverture() {
             currentform={currentform}
             form_data1={form1_data}
             form_data2={form2_data}
-            setFormdata2={setForm2data}
+            setFormdata2={setForm2data}            
           />
         </>
       ) : currentform === 3 ? (

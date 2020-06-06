@@ -6,7 +6,13 @@ function Menu() {
   return (
     <div>
       <>
-        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          fixed="top"
+          bg="primary"
+          variant="dark"
+        >
           <Navbar.Brand>
             <strong>SACE</strong>
           </Navbar.Brand>

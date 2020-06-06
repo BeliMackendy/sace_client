@@ -12,9 +12,16 @@
   margin-right: 10px;
 }
 
+.mainformulaire
+{
+  margin-top: 70px;
+  width: 98%;
+}
+
 .m-formulaire{
   margin-top: 2px;
 }
+
 .m-formulaire ul>li:hover{
   color:white;
   background-color: lightblue;
@@ -23,5 +30,10 @@
 .mainformaulaire
 {
   width: 98%;
+}
+
+.route_main2{
+  /* overflow: auto; */
+  height: 580px;
 }
 

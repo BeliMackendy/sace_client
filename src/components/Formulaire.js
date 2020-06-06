@@ -6,14 +6,14 @@ import Ouverture from "./Ouverture";
 
 function Formulaire() {  
   return (
-    <div className="mainformaulaire">
+    <div className="mainformulaire">
       <BrowserRouter>
         <div className="row">
           <div className="col-sm-6 col-md-3">
             <MenuFormulaire />
           </div>
           <div className="col-sm-6 col-md-9">
-            <div className="route_main2">
+            <div className="route_main2 overflow-auto">
               <Route exact path="/Ouverture" component={Ouverture} />
             </div>
           </div>
