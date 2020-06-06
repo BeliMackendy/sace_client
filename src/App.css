@@ -4,12 +4,13 @@
 
 .bar_etape
 {
-  background-color: "#ADD8E6";
-  color: "#FFFFFF";
-  font-weight: "bold";
+  background-color: #ADD8E6;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 20px;
   padding-left: 10px;
   margin-bottom: 10px;
-  margin-right: 10px;
+  margin-right: 10px;  
 }
 
 .mainformulaire

@@ -30,7 +30,6 @@ const Form2 = ({
   const [postTel, setPostTel] = useState();
   const [postEmail, setPostEmail] = useState();
 
-
   const selectsouscategorie_handler = (e) => {
     setPostIdCategorie(e.target.value);
   };
@@ -48,7 +47,7 @@ const Form2 = ({
   const select_public_cible_handler = (e) => {
     setPostIdPublicCible(e.target.value);
   };
-  
+
   let url_ouverture = "http://localhost:3001/app/sace/ouverture";
 
   const submitForm = () => {
@@ -105,21 +104,11 @@ const Form2 = ({
     <>
       <div className="container">
         <form className="form">
-          <div
-            style={{
-              backgroundColor: "#ADD8E6",
-              color: "#FFFFFF",
-              fontWeight: "bold",
-              fontSize: "20px",
-              paddingLeft: "10px",
-              marginBottom: "10px",
-              marginRight: "10px",
-            }}
-          >
+          <div className="bar_etape">
             Identification de l'établissement scolaire
           </div>
 
-          <div className="form-group">
+          <div className="form-group col-sm-10">
             <label>Dénomination de l'établissement</label>
             <input
               type="text"
@@ -128,7 +117,7 @@ const Form2 = ({
             />
           </div>
           <div className="form-row">
-            <div className="form-group col-md-6">
+            <div className="form-group col-md-4">
               <label>Adresse</label>
               <input
                 type="text"
@@ -136,7 +125,7 @@ const Form2 = ({
                 onChange={(e) => setPostAdresse(e.target.value)}
               />
             </div>
-            <div className="form-group col-md-6">
+            <div className="form-group col-md-3">
               <label>Section communale/localité </label>
               <input
                 type="text"
@@ -144,9 +133,7 @@ const Form2 = ({
                 onChange={(e) => setPostSec_communale(e.target.value)}
               />
             </div>
-          </div>
-          <div className="form-row">
-            <div className="form-group col-md-4">
+            <div className="form-group col-md-3">
               <label>Ville/Commune</label>
               <input
                 type="text"
@@ -154,7 +141,9 @@ const Form2 = ({
                 onChange={(e) => setPostCommune(e.target.value)}
               />
             </div>
-            <div className="form-group col-md-4">
+          </div>
+          <div className="form-row">
+            <div className="form-group col-md-3">
               <label>Tel</label>
               <input
                 type="text"
@@ -162,7 +151,7 @@ const Form2 = ({
                 onChange={(e) => setPostTel(e.target.value)}
               />
             </div>
-            <div className="form-group col-md-4">
+            <div className="form-group col-md-3">
               <label>Email</label>
               <input
                 type="email"
@@ -174,12 +163,24 @@ const Form2 = ({
           <Souscategorie
             selectsouscategorie_handler={selectsouscategorie_handler}
           />
-          <Niveau select_niveau_handler={select_niveau_handler} />
-          <Vacation select_vacation_handler={select_vacation_handler} />
-          <Programme select_programme_handler={select_programme_handler} />
-          <Publiccible
-            select_public_cible_handler={select_public_cible_handler}
-          />
+          <div className="form-row">
+            <div className="form-group col-md-4">
+              <Niveau select_niveau_handler={select_niveau_handler} />
+            </div>
+            <div className="form-group col-md-4">
+              <Vacation select_vacation_handler={select_vacation_handler} />
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="form-group col-md-4">
+              <Programme select_programme_handler={select_programme_handler} />
+            </div>
+            <div className="form-group col-md-4">
+              <Publiccible
+                select_public_cible_handler={select_public_cible_handler}
+              />
+            </div>
+          </div>
         </form>
       </div>
       <div className="form-row">

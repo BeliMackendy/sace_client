@@ -38,7 +38,7 @@ function Souscategorie(props) {
   return (
     <div>
       <Categorie selectoption_handler={selectoption_handler} />
-      <fieldset className="border p-2 form-group">
+      <fieldset className="border p-2 form-group col-sm-6">
         {postsouscategorie.map((p, index) => (
           <div className="form-check form-check-inline form-group" key={index}>
             <input

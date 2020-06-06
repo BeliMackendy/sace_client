@@ -5,7 +5,7 @@ import Personnemorale from "./Personne_morale";
 
 import axios from "axios";
 
-const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
+const Form3 = ({ setCurrentform, currentform, form_data2 }) => {
   // console.log(form_data2);
   const fondateur = [
     "Entreprise individuelle",
@@ -90,7 +90,6 @@ const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
       sendData(url_ent_individuelle, formData);
     }
     if (postfondateur === "Entreprise en noms collectifs") {
-      
       formData.append("id", form_data2.Id_institution);
       // formData.append("id", '1');
       formData.append("denomination", postformfondateur.denomination);
@@ -99,7 +98,6 @@ const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
       formData.append("reconnaissance", postformfondateur.reconnaissance);
       formData.append("copie_p_identite", postformfondateur.copie_p_identite);
       sendData(url_ent_nomscollectif, formData);
-
     }
     if (postfondateur === "Personne morale") {
       formData.append("id", form_data2.Id_institution);
@@ -107,8 +105,7 @@ const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
       formData.append("nature", postformfondateur.nature);
       formData.append("reconnaissance", postformfondateur.reconnaissance);
       formData.append("quitus_patente", postformfondateur.quitus_patente);
-      sendData(url_personne_morale, formData);      
-      
+      sendData(url_personne_morale, formData);
     }
   };
 
@@ -116,19 +113,7 @@ const Form3 = ({ setCurrentform, currentform ,form_data2} ) => {
     <>
       <div className="container">
         <form className="form">
-          <div
-            style={{
-              backgroundColor: "#ADD8E6",
-              color: "#FFFFFF",
-              fontWeight: "bold",
-              fontSize: "20px",
-              paddingLeft: "10px",
-              marginBottom: "10px",
-              marginRight: "10px",
-            }}
-          >
-            Informations générales
-          </div>
+          <div className="bar_etape">Informations générales</div>
           <div className="form-group">
             <label>Choix du fondateur/fondatrice </label>
             <select

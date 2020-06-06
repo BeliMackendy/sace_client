@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Disctrict from "./Disctrict";
 
-
 const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
   const [date_creation, setDate_creation] = useState();
   const [departement, setDepartement] = useState();
@@ -30,25 +29,12 @@ const Form1 = ({ setCurrentform, currentform, form_data1, setFormdata1 }) => {
   const initZone = (zon) => {
     setZone(zon);
   };
-  
 
   return (
     <Fragment>
       <div className="container">
         <form className="form">
-          <div
-            style={{
-              backgroundColor: "#ADD8E6",
-              color: "#FFFFFF",
-              fontWeight: "bold",
-              fontSize: "20px",
-              paddingLeft: "10px",
-              marginBottom: "10px",
-              marginRight: "10px",
-            }}
-          >
-            Informations générales
-          </div>
+          <div className="bar_etape">Informations générales</div>
 
           <div className="form-group">
             <label>Date de la demande</label>

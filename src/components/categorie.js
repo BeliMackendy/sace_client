@@ -20,7 +20,7 @@ function Categorie(props) {
 
   return (
     <>
-      <div className="form-group">
+      <div className="form-group col-sm-5">
         <label>Catégorie</label>
         <select
           className="form-control"
