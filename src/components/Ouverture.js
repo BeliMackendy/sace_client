@@ -31,7 +31,7 @@ function Ouverture() {
   
   
 
-  const [currentform, setCurrentform] = useState(4);
+  const [currentform, setCurrentform] = useState(1);
   const [form1_data, setForm1data] = useState(initForm1);
   const [form2_data, setForm2data] = useState(initForm2);
 
