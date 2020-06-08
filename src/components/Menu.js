@@ -19,12 +19,15 @@ function Menu() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <LinkContainer to="accueil">
+              <LinkContainer to="/accueil">
                 <Nav.Link>Accueil</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="formulaire">
-                <Nav.Link>Formulaire</Nav.Link>
+              <LinkContainer to="/autorisation">
+                <Nav.Link>Demande d'Ouverture</Nav.Link>
               </LinkContainer>
+              {/* <LinkContainer to="/formulaire">
+                <Nav.Link>Formulaire</Nav.Link>
+              </LinkContainer> */}
             </Nav>
           </Navbar.Collapse>
         </Navbar>

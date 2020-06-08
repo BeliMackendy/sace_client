@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Menu from "./Menu";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Formulaire from "./Formulaire";
+
 import Accueil from "./Accueil";
+import Autorisation from "./Autorisation";
+import OuvertureDossier from "./OuvertureDossier";
 
 class Sace extends Component {
   constructor(props) {
@@ -16,8 +18,10 @@ class Sace extends Component {
       <BrowserRouter>
         <Menu />
         <Switch>
-          <Route path="/accueil" component={Accueil} />
-          <Route path="/formulaire" component={Formulaire} />
+          <Route exact path="/accueil" component={Accueil} />
+          {/* <Route exact path="/formulaire" component={Formulaire} /> */}
+          <Route exact path="/autorisation" component={Autorisation} />
+          <Route exact path="/ouverturedossier" component={OuvertureDossier}/>
         </Switch>
       </BrowserRouter>
     );

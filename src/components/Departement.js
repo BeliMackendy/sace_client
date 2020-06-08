@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
 const Departement = (props) => {
   const [postDepartement, setPostDepartement] = useState([]);
 
@@ -18,22 +19,23 @@ const Departement = (props) => {
       }, []);
   });
 
+  // const dde_handler = (e) => {
+  //   const departement = postDepartement.filter(function (o) {
+  //     return o.Code_direction === e.target.value;
+  //   });
+  // };
+
   return (
     <>
-      <div className="form-group">
-        <label>Direction départementale d’éducation (DDE)</label>
-        <select
-          className="form-control"
-          onChange={(e) => props.selectoption_handler(e, postDepartement)}
-        >
-          <option value="0">Choix du Departement</option>
-          {postDepartement.map((post, index) => (
-            <option key={index} value={post.Code_direction}>
-              {post.Libelle_departement}
-            </option>
-          ))}
-        </select>
-      </div>
+      <label>Direction départementale d’éducation (DDE)</label>
+      <select className="form-control" name="dde" onChange={(e) => props.selectdepartement_handler(e, postDepartement)}>
+        <option value="0">Choix du Departement</option>
+        {postDepartement.map((post, index) => (
+          <option key={index} value={post.Code_direction}>
+            {post.Libelle_departement}
+          </option>
+        ))}
+      </select>
     </>
   );
 };
