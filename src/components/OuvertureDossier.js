@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form1Inscription from "./Form1Inscription";
 import Form2Inscription from "./Form2Inscription";
 import Form3Inscription from "./Form3Inscription";
-import Tes from "./Tes";
+import DossierEtablissement from "./DossierEtablissement";
 
 const OuvertureDossier = () => {
   const form1data = {
@@ -65,7 +65,7 @@ const OuvertureDossier = () => {
         </>
       ) : (
         <>
-        <Tes/>
+        <DossierEtablissement/>
           {/* <Form4 setCurrentform={setCurrentform}  currentform={currentform}  form_data2={form2_data} /> */}
         </>
       )}
